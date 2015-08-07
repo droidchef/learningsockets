@@ -34,7 +34,8 @@ public class SocketClient {
             out.writeUTF("Hello from "
                             + client.getLocalSocketAddress());
             while(true) {
-                out.writeUTF(""+(new Random(System.currentTimeMillis()).nextInt()));
+                out.writeUTF("Random Number = "+(new Random(System.currentTimeMillis()).nextInt()));
+                Thread.sleep(1500);
             }
         }catch(IOException e)
         {

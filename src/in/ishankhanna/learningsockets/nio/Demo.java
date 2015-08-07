@@ -27,10 +27,6 @@ import java.util.Iterator;
 import java.util.Set;
 
 public class Demo {
-    static Charset charset = Charset.forName("ISO-8859-1");
-    static CharsetEncoder encoder = charset.newEncoder();
-    static CharsetDecoder decoder = charset.newDecoder();
-
 
     static ByteBuffer buffer = ByteBuffer.allocate(512);
 
@@ -77,10 +73,8 @@ public class Demo {
                     buffer.flip();
                     byte[] bytes = new byte[buffer.remaining()];
                     buffer.get(bytes);
-                    String request = decoder.decode(buffer).toString();
                     System.out.println(new String(bytes));
                     buffer.clear();
-
                 }
             }
         }
